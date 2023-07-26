@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript</title>
+    <link href="style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="background">
+      <div class="app_container">
+        <div>
+        <h1>Check the weather in <span style="white-space: nowrap">any city!</span></h1>
+        <form>
+          <div class="center">
+            <input
+              placeholder="City name"
+              type="text"
+              id="city"
+              name="city"
+              value=""
+              required
+            />
+            <button id="button">Search</button>
+          </div>
+        </form>
+        <div id="cityName" class="main-text">Kraków</div>
+        <div class="container">
+          <div class="center-nowrap">
+              <img id="icon" src="images/clear.png" class="icon"></img>
+              <div>
+                <div class="temperature" id="temp">18 °C</div>
+                <div class="small-temp">feels like <span id="small-temp">23°C</span></div>
+              </div>
+          </div>
+          <div id="description" class="small-number">Clouds</div>
+        </div>
+          <div class="center"><div class="line"></div></div>
+          <div class="bottom-container">
+           
+            <div class="bottom-item">
+              <div class="center">
+              <img src="images/humidity.svg" alt="humidity" class="small-icon">
+              <div>
+                <div id="humidity" class="small-number">23%</div>
+                <div class="small-text">humidity</div>
+              </div>
+            </div>
+            </div>
+            <div class="bottom-item">
+              <div class="center">
+              <img src="images/wind.svg" alt="humidity" class="small-icon">
+              <div>
+                <div id="wind" class="small-number">16 km/h</div>
+                <div class="small-text">wind speed</div>
+              </div>
+            </div>
+            </div>
+          
+          </div>
+          <div class="center"><div class="line-second"></div></div>
+        <div class="center">
+          <div class="bottom-container">
+            <div class="bottom-item">
+              <div>
+                <div id="pressure" class="additional-info-number">996 hPa</div>
+                <div class="additional-info">pressure</div>
+              </div>
+            </div>
+            <div class="bottom-item">
+              <div>
+                <div id="max" class="additional-info-number">12°C</div>
+                <div class="additional-info">max</div>
+              </div>
+            </div>
+            <div class="bottom-item">
+              <div>
+                <div id="min" class="additional-info-number">12°C</div>
+                <div class="additional-info">min</div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom-container">
+            <div class="bottom-item">
+              <div>
+                <div id="sunrise" class="additional-info-number">6:20</div>
+                <div class="additional-info">sunrise</div>
+              </div>
+            </div>
+            <div class="bottom-item">
+              <div>
+                <div id="sunset" class="additional-info-number">12°C</div>
+                <div class="additional-info">sunset</div>
+              </div>
+            </div>
+            <div class="bottom-item">
+              <div>
+                <div id="visibility" class="additional-info-number">10 km</div>
+                <div class="additional-info">visibility</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="module" src="index.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </body>
+</html>
