@@ -77,6 +77,8 @@ async function checkWeather(city) {
     })
 }
 
+checkWeather("Kraków");
+
 button.addEventListener("click", (event) => {
   event.preventDefault()
   checkWeather(city.value)
