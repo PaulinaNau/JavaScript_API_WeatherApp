@@ -11,3 +11,5 @@ The application provide the current weather information in all the cites of the 
 ### Implementations
 
 This app is written in JavaScript and pulls data using Axios library. The sunrise and sunset time pulled from API is coverted from Unix Epoch value to standars time format. Some data form API are converted to values that meet the standards, for expample temperature is rounded to whole numbers. There was Prettier and ESLint used to prevent bugs and keep well-structured code. The dashboard was designed and coded by myself in CSS/SCSS. 
+
+The entire weather data in this app comes form OpenWeather API.
