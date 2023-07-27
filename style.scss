@@ -225,14 +225,14 @@ button:active {
 }
 
 .icon {
- width: auto;
- height: 120px;
- margin: 0 20px;
+  width: auto;
+  height: 120px;
+  margin: 0 20px;
 }
 .small-icon {
- width: auto;
- height: 40px;
- margin: 0 10px;
+  width: auto;
+  height: 40px;
+  margin: 0 10px;
 }
 
 // mobile view
@@ -273,8 +273,8 @@ button:active {
     width: auto;
     height: 80px;
     margin: 0;
-   }
-   .temperature {
+  }
+  .temperature {
     font-size: 3rem;
     line-height: 4rem;
   }
@@ -294,20 +294,21 @@ button:active {
     height: 40px;
     margin: 0 5px;
     padding: 0;
-   }
-   .small-text {
+  }
+  .small-text {
     font-size: 1.2rem;
   }
   .small-number {
     font-size: 1.5rem;
   }
-   .additional-info {
+  .additional-info {
     font-size: 1rem;
   }
   .additional-info-number {
     font-size: 1rem;
   }
-  .line, .line-second {
+  .line,
+  .line-second {
     width: 100%;
     margin: 0;
   }
