@@ -1,4 +1,5 @@
 ## Weather App
+Follow this link to see the project: https://weather-app-netlify-js.netlify.app/
 
 ### Main goals
 The apllication was created to present my skills in programming and pulling data from API. This project was coded with JavaScript and the entire data comes from the open source REST API. The dashboard was designed and coded by myself in CSS/SCSS. 
