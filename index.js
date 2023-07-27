@@ -1,7 +1,7 @@
 const city = document.querySelector("#city")
 const button = document.querySelector("button")
 
-async function checkWeather(city) {
+const checkWeather = async (city) => {
   const cityName = document.querySelector("#cityName")
   const temp = document.querySelector("#temp")
   const max = document.querySelector("#max")
@@ -15,39 +15,38 @@ async function checkWeather(city) {
   const sunset = document.querySelector("#sunset")
   const visibility = document.querySelector("#visibility")
   const description = document.querySelector("#description")
+  const errorText = document.querySelector("#error")
 
   await axios({
     method: "get",
     url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=77b28523d26ef774b38ff8499841cd01&units=metric`,
   })
     .then(function (response) {
-      console.log(response.data)
-      cityName.textContent = response.data.name
-      temp.textContent = Math.round(response.data.main.temp) + "°C"
-      max.textContent = Math.round(response.data.main.temp_max) + "°C"
-      min.textContent = Math.round(response.data.main.temp_min) + "°C"
-      smallTemp.textContent = Math.round(response.data.main.feels_like) + "°C"
-      humidity.textContent = Math.round(response.data.main.humidity) + "%"
-      wind.textContent = response.data.wind.speed + " " + "km/h"
-      pressure.textContent = response.data.main.pressure + " " + "hPa"
-      visibility.textContent = response.data.visibility / 1000 + " " + "km"
-      description.textContent = response.data.weather[0].description
+      cityName.textContent = response.data.name;
+      temp.textContent = Math.round(response.data.main.temp) + "°C";
+      max.textContent = Math.round(response.data.main.temp_max) + "°C";
+      min.textContent = Math.round(response.data.main.temp_min) + "°C";
+      smallTemp.textContent = Math.round(response.data.main.feels_like) + "°C";
+      humidity.textContent = Math.round(response.data.main.humidity) + "%";
+      wind.textContent = response.data.wind.speed + " " + "km/h";
+      pressure.textContent = response.data.main.pressure + " " + "hPa";
+      visibility.textContent = response.data.visibility / 1000 + " " + "km";
+      description.textContent = response.data.weather[0].description;
+      errorText.textContent = "";
 
-      const dateSunrise = new Date(response.data.sys.sunrise * 1000)
-      let hoursSunrise = dateSunrise.getHours()
-      hoursSunrise < 10 ? (hoursSunrise = `0${hoursSunrise}`) : hoursSunrise
-      let minutesSunrise = dateSunrise.getMinutes()
-      minutesSunrise < 10
-        ? (minutesSunrise = `0${minutesSunrise}`)
-        : minutesSunrise
-      sunrise.textContent = hoursSunrise + ":" + minutesSunrise
+      const dateSunrise = new Date(response.data.sys.sunrise * 1000);
+      let hoursSunrise = dateSunrise.getHours();
+      hoursSunrise < 10 ? (hoursSunrise = `0${hoursSunrise}`) : hoursSunrise;
+      let minutesSunrise = dateSunrise.getMinutes();
+      minutesSunrise < 10 ? (minutesSunrise = `0${minutesSunrise}`) : minutesSunrise;
+      sunrise.textContent = hoursSunrise + ":" + minutesSunrise;
 
-      const dateSunset = new Date(response.data.sys.sunset * 1000)
-      let hoursSunset = dateSunset.getHours()
-      hoursSunset < 10 ? (hoursSunset = `0${hoursSunset}`) : hoursSunset
-      let minutesSunset = dateSunset.getMinutes()
-      minutesSunset < 10 ? (minutesSunset = `0${minutesSunset}`) : minutesSunset
-      sunset.textContent = hoursSunset + ":" + minutesSunset
+      const dateSunset = new Date(response.data.sys.sunset * 1000);
+      let hoursSunset = dateSunset.getHours();
+      hoursSunset < 10 ? (hoursSunset = `0${hoursSunset}`) : hoursSunset;
+      let minutesSunset = dateSunset.getMinutes();
+      minutesSunset < 10 ? (minutesSunset = `0${minutesSunset}`) : minutesSunset;
+      sunset.textContent = hoursSunset + ":" + minutesSunset;
 
       if (response.data.weather[0].main == "Clouds") {
         icon.src = "images/clouds.png"
@@ -72,8 +71,8 @@ async function checkWeather(city) {
         icon.alt = "wind"
       }
     })
-    .catch(function (error) {
-      console.log(error)
+    .catch((error) => {
+     errorText.textContent = error.response.data.message;
     })
 }
 

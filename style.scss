@@ -3,6 +3,8 @@ $white: #ffffff;
 $purple: #dd1fda;
 $purple-light: #e68de4;
 $grey: #9d9d9d;
+$error: #db3131;
+
 
 * {
   font-family: Poppins, sans-serif;
@@ -124,6 +126,12 @@ input::placeholder {
   font-size: 1.5rem;
   font-weight: 200;
   color: $grey;
+}
+
+.error {
+  font-size: 1rem;
+  font-weight: 500;
+  color: $error;
 }
 
 button {
@@ -291,7 +299,7 @@ button:active {
   }
   .small-icon {
     width: auto;
-    height: 40px;
+    height: 30px;
     margin: 0 5px;
     padding: 0;
   }
